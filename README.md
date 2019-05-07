@@ -9,3 +9,4 @@
 
 ![image](http://github.com/xdmatirx/todo_list/raw/master/GIF制作/已完成事项.gif)
 
+![image](https://raw.githubusercontent.com/xdmatirx/todo_list/master/GIF制作/删除.gif)
