@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>添加待办事项</title>
+
+    <!-- Bootstrap core CSS -->
+{% comment %} <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> {% endcomment %}
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .navbar-collapse{
+      font-size:1.3em;
+      padding-left:20em;
+      padding-right:32em;
+      height:2.4em;
+      }
+      .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+    
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      #form-edit{
+           margin-left:8em;
+           margin-right:8em;
+        }
+      .form-control{
+          display:inline
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="#">主页 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="#">功能介绍</a>
+      </li>
+      
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="" aria-label="Search">
+    </form>
+     <button class="btn btn-secondary my-2 my-sm-0" type="submit">添加</button>
+  </div>
+</nav>
+
+<main role="main" class="container">
+<br>
+<br>
+<br>
+<form id="form-edit" method='POST' action=''>
+        <div class="form-group">
+          <label for="editTodo"></label>
+          {% csrf_token %}
+          <input name='修改的事项' class="form-control form-control-lg" id="editTodo" type="text" placeholder="{{待更改事项}}">
+          <button type="submit" class="btn btn-lg btn-primary btn-block">提交</button>
+          {% comment %} <small id="help" class="form-text text-muted">在这里编辑待办事项</small> {% endcomment %}
+          {{warning}}
+        </div>
+        
+      </form>
+</div>
+
+</main>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
